@@ -10,7 +10,7 @@ using namespace std;
 // Константы
 const unsigned char C1[] = {0x01, 0x02, 0x03, 0x04, 0x05};
 const unsigned char C2[] = {0x0A, 0x0B, 0x0C, 0x0D, 0x0E}; 
-const unsigned char DATA[] = "Пример данных для обработки";
+const unsigned char DATA[] = "Example of data";
 
 
 // Утилита для печати ключей в hex-формате
@@ -27,7 +27,7 @@ vector<unsigned char> hmac_streebog512(const unsigned char* key, size_t key_len,
     // Выбираем GOST алгоритм
     const EVP_MD* md = EVP_get_digestbyname("streebog512");
     if (!md) {
-        cerr << "Ошибка: Не удалось загрузить streebog512" << endl;
+        cerr << "Error: Failed to load streebog512" << endl;
         exit(1);
     }
 
@@ -36,7 +36,7 @@ vector<unsigned char> hmac_streebog512(const unsigned char* key, size_t key_len,
 
     HMAC_CTX* ctx = HMAC_CTX_new();
     if (!ctx) {
-        cerr << "Ошибка: Не удалось создать контекст HMAC" << endl;
+        cerr << "Error: Failed to create HMAC context" << endl;
         exit(1);
     }
 
@@ -44,7 +44,7 @@ vector<unsigned char> hmac_streebog512(const unsigned char* key, size_t key_len,
     if (HMAC_Init_ex(ctx, key, key_len, md, nullptr) != 1 ||
         HMAC_Update(ctx, data, data_len) != 1 ||
         HMAC_Final(ctx, result, &result_len) != 1) {
-        cerr << "Ошибка: HMAC не выполнен" << endl;
+        cerr << "Error: HMAC failed" << endl;
         HMAC_CTX_free(ctx);
         exit(1);
     }
