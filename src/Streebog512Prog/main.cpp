@@ -8,9 +8,10 @@
 using namespace std;
 
 // Константы
-const unsigned char C1[] = "C1_CONSTANT"; // Замените на ваши данные
-const unsigned char C2[] = "C2_CONSTANT"; // Замените на ваши данные
-const unsigned char DATA[] = "DATA_CONSTANT"; // Замените на ваши данные
+const unsigned char C1[] = {0x01, 0x02, 0x03, 0x04, 0x05};
+const unsigned char C2[] = {0x0A, 0x0B, 0x0C, 0x0D, 0x0E}; 
+const unsigned char DATA[] = "Пример данных для обработки";
+
 
 // Утилита для печати ключей в hex-формате
 void printHex(const char* label, const unsigned char* data, size_t len) {
