@@ -62,19 +62,17 @@ std::vector<uint8_t> HMAC_Streebog512(const std::vector<uint8_t>& key, const std
 
 int main(void)
 {
-    if (ak_libakrypt_create(NULL) != ak_true) 
-    {
-        /* инициализация выполнена не успешно, следовательно, выходим из программы */
-        ak_libakrypt_destroy();
-        return EXIT_FAILURE;
-    }
+        if (ak_libakrypt_create(NULL) != ak_true) 
+        {
+            /* инициализация выполнена не успешно, следовательно, выходим из программы */
+            ak_libakrypt_destroy();
+            return EXIT_FAILURE;
+        }
 
-    /* ... здесь основной код программы ... */
+        /* ... здесь основной код программы ... */
 
-    // -
+        // -
 
-    int main() 
-    {
         // Пример ключа и данных
         std::string key = "ExampleKey";
         std::string data = "ExampleData";
@@ -95,9 +93,6 @@ int main(void)
         else {
             printf("Ошибка вычисления HMAC\n");
         }
-
-        return 0;
-    }
 
     // -
 
