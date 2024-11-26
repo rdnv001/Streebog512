@@ -1,9 +1,0 @@
-main.cpp: In function ‘int main()’:
-main.cpp:41:14: error: invalid conversion from ‘ak_pointer’ {aka ‘void*’} to ‘ak_hmac’ {aka ‘hmac*’} [-fpermissive]
-41 |     function(ptr);
-|              ^~~
-|              |
-|              ak_pointer {aka void*}
-main.cpp:8:23: note:   initializing argument 1 of ‘void function(ak_hmac)’
-8 | void function(ak_hmac ctx)
-|               ~~~~~~~~^~~
