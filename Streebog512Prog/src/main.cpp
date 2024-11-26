@@ -30,11 +30,6 @@ int main(void)
     ak_pointer ptr;
 
     /* проверяем создание/удаление контекстов с алгоритмами hmac */
-    //function(ptr = ak_oid_new_object(oid = ak_oid_find_by_name("nmac-streebog")));
-    //ak_oid_delete_object(oid, ptr);
-
-    //function(ptr = ak_oid_new_object(oid = ak_oid_find_by_name("hmac-streebog256")));
-    //ak_oid_delete_object(oid, ptr);
 
     oid = ak_oid_find_by_name("hmac-streebog512");
     ptr = ak_oid_new_object(oid);
