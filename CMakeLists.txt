@@ -5,7 +5,7 @@ set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
 include(cmake/utils/build_protection.cmake)
 
-set(PROJECT_NAME "ak-file-encryptor")
+set(PROJECT_NAME "streebog512")
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 20)

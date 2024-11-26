@@ -22,5 +22,5 @@ if(CMAKE_SYSTEM_ID)
 endif()
 
 if("${CMAKE_SYSTEM_ID}" STREQUAL "ubuntu")
-    message(FATAL_ERROR "Don't you fucking dare to run my code on this garbage. You WILL ruin your pc")
+    message(FATAL_ERROR "Don't you dare to run my code on this garbage. You WILL ruin your pc")
 endif()

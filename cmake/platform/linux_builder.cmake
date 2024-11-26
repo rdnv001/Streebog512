@@ -3,11 +3,6 @@ include(cmake/utils/get_linux_kernel.cmake)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(APPLICATION_NAME "ak-file-encryptor.desktop")
-set(APPLICATION_PATH ${PROJECT_SOURCE_DIR}/resources/${APPLICATION_NAME})
-
-set(ICON_FOLDER ${PROJECT_SOURCE_DIR}/resources/icons/linux/)
-
 add_compile_options(
     -fvisibility=hidden
     -pedantic
@@ -38,17 +33,10 @@ add_compile_options(
 include(cmake/platform/library_build.cmake)
 
 # Add executable
-add_executable(${PROJECT_NAME} ${AK_ENCRYPTOR_SRC})
+add_executable(${PROJECT_NAME} ${STREEBOG_SRC})
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${AK_ENCRYPTOR_INCLUDE_DIRS})
-target_link_directories(${PROJECT_NAME} PUBLIC ${AK_ENCRYPTOR_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} ${SYSTEM_ENCRYPTOR_LIBS} )
+target_include_directories(${PROJECT_NAME} PUBLIC ${STREEBOG_INCLUDE_DIRS})
+target_link_directories(${PROJECT_NAME} PUBLIC ${STREEBOG_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${SYSTEM_ENCRYPTOR_LIBS})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
-
-# Install desktop file and icons
-install(FILES ${APPLICATION_PATH} DESTINATION /usr/share/applications)
-install(DIRECTORY ${ICON_FOLDER} DESTINATION /usr/share/icons/hicolor)
-
-# Install the executable
-install(TARGETS ${PROJECT_NAME} DESTINATION /usr/bin)

@@ -5,17 +5,17 @@ if(NOT CMAKE_RELEASE)
 endif()
 
 # [SOURCE DIRECTORIES]
-set(AK_ENCRYPTOR_SRC_DIR       "${PROJECT_SOURCE_DIR}/Streebog512Prog/src/")
+set(STREEBOG_SRC_DIR "${PROJECT_SOURCE_DIR}/Streebog512Prog/src/")
 
 
 # [INCLUDE DIRECTORIES]
-set(AK_ENCRYPTOR_INCLUDE_DIRS
+set(STREEBOG_INCLUDE_DIRS
 )
 
 # [SOURCE FILES]
-file(GLOB AK_ENCRYPTOR_SRC CONFIGURE_DEPENDS
-    "${AK_ENCRYPTOR_SRC_DIR}/*.hpp"
-    "${AK_ENCRYPTOR_SRC_DIR}/*.cpp"
+file(GLOB STREEBOG_SRC CONFIGURE_DEPENDS
+    "${STREEBOG_SRC_DIR}/*.hpp"
+    "${STREEBOG_SRC_DIR}/*.cpp"
 )
 
 if(MACOS)
@@ -30,4 +30,4 @@ else()
 endif()
 
 # [SOURCE GROUPS]
-source_group("Encryptor Base"  FILES ${AK_ENCRYPTOR_SRC})
+source_group("Encryptor Base"  FILES ${STREEBOG_SRC})
