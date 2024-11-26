@@ -27,7 +27,7 @@ void function(ak_hmac ctx)
 int main(void)
 {
     ak_oid oid;
-    ak_pointer ptr;
+    hmac* ptr;
 
     /* проверяем создание/удаление контекстов с алгоритмами hmac */
     //function(ptr = ak_oid_new_object(oid = ak_oid_find_by_name("nmac-streebog")));
