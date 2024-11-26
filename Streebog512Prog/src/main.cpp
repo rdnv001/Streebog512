@@ -13,10 +13,10 @@ void function(ak_hmac ctx)
     const auto seed = "seed";
     const auto data = "data";
 
-    ak_hmac_set_key_from_password(ctx, static_cast<void*>(password), 8, static_cast<void*>(seed), 4);
+    ak_hmac_set_key_from_password(ctx, static_cast<void*>(const_cast<char*>(password)), 8, static_cast<void*>(const_cast<char*>(seed)), 4);
     memset(buffer, 0, sizeof(buffer));
 
-    ak_hmac_ptr(ctx, static_cast<void*>(data), 4, buffer, sizeof(buffer));
+    ak_hmac_ptr(ctx, static_cast<void*>(const_cast<char*>(data)), 4, buffer, sizeof(buffer));
 
     printf("%s (%lu bytes: %s, %s)\n",
         ak_ptr_to_hexstr(buffer, ak_hmac_get_tag_size(ctx), ak_false),
