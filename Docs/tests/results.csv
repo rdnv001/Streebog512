@@ -1,0 +1,10 @@
+TestFile,n,NelsonS,CriticalSAlpha,Series,CriticalM,NelsonIndependence,SeriesIndependence
+test_results_100_0.txt,98,32,57.9933,54,41,1,0
+test_results_200_0.txt,198,71,111.789,106,88,1,0
+test_results_300_0.txt,298,94,164.692,154,135,1,0
+test_results_400_0.txt,398,120,217.136,198,183,1,0
+test_results_500_0.txt,498,168,269.288,250,231,1,0
+test_results_600_0.txt,598,182,321.233,316,279,1,0
+test_results_700_0.txt,696,231,371.986,350,327,1,0
+test_results_800_0.txt,798,278,424.684,392,376,1,0
+test_results_900_0.txt,898,304,476.246,464,425,1,0
